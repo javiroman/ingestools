@@ -26,6 +26,10 @@ def xls_summary(file):
 @click.argument('file')
 @click.argument('sheet')
 def xls_show(file, sheet):
-    """Show the Excel sheet content"""
-    excel = IngestRequest(file)
-    excel.print_sheet_content(sheet)
+    """FILE_NAME SHEET_NAME Show the Excel sheet content"""
+    try:
+        excel = IngestRequest(file)
+        excel.print_sheet_content(sheet)
+    except InvalidFileException:
+        click.echo("ERROR: File not found or not Excel File!")
+
