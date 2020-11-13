@@ -1,4 +1,5 @@
 import click
+from .ingest_request import IngestRequest
 
 
 @click.group()
@@ -8,14 +9,14 @@ def xls():
 
 
 @xls.command('summary')
-def xls_summary():
-    """Commands for WP"""
-    click.echo("Command 1 Group 1")
+@click.argument('file')
+def xls_summary(file):
+    """FILE path to excel file summary"""
+    excel = IngestRequest(file)
+    excel.print_sheet_names()
 
 
 @xls.command('show')
-@click.option("--test", help="This is the test option")
-def xls_show(test):
-    """Test Install for WP"""
-    print('Installing...')
-    print(test)
+def xls_show():
+    """Show the Excel file"""
+    print('show command')
