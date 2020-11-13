@@ -8,9 +8,11 @@ setup(
     include_package_data=True,
     install_requires=[
         'Click',
+        'JayDeBeApi',
+        'openpyxl'
     ],
     entry_points='''
         [console_scripts]
-    ingestools=ingestools.main:init
+        ingestools=ingestools.main:init
     ''',
 )

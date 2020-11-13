@@ -5,7 +5,10 @@ from .db import commands as db
 
 
 @click.group()
-def init():
+@click.option("--debug", is_flag=True, help='debug application')
+@click.version_option(None, "-v", "--version", message="%(version)s")
+def init(debug):
+    """Ingest Tools Utilities by KEEDIO"""
     pass
 
 
