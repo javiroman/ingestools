@@ -15,6 +15,7 @@ def xls_summary():
 
 @xls.command('show')
 @click.option("--test", help="This is the test option")
-def xls_show():
+def xls_show(test):
     """Test Install for WP"""
     print('Installing...')
+    print(test)
