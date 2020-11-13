@@ -12,6 +12,7 @@ setup(
         'Click',
         'JayDeBeApi',
         'openpyxl',
+        'prettytable',
     ],
     entry_points='''
         [console_scripts]
