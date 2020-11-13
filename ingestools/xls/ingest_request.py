@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from openpyxl import load_workbook
 from prettytable import PrettyTable
 
@@ -25,3 +27,11 @@ class IngestRequest:
                 if all(c.value is None for c in row):
                     break
         print(self.table)
+
+    def print_sheet_content(self, sheet):
+        ws = self.wb.get_sheet_by_name(sheet)
+        pprint(list(self.__iter_rows(ws)))
+
+    def __iter_rows(self, ws):
+        for row in ws.iter_rows():
+            yield [cell.value for cell in row]

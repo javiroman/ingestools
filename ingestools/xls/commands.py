@@ -23,6 +23,9 @@ def xls_summary(file):
 
 
 @xls.command('show')
-def xls_show():
-    """Show the Excel file"""
-    print('show command')
+@click.argument('file')
+@click.argument('sheet')
+def xls_show(file, sheet):
+    """Show the Excel sheet content"""
+    excel = IngestRequest(file)
+    excel.print_sheet_content(sheet)
