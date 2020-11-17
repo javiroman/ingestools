@@ -13,7 +13,7 @@ def xls():
 @xls.command('summary')
 @click.argument('file')
 def xls_summary(file):
-    """FILE path to excel file summary"""
+    """Summary of excel file"""
     try:
         excel = IngestRequest(file)
         # excel.print_table_summary_real_count()
@@ -27,9 +27,10 @@ def xls_summary(file):
 @click.argument('sheet')
 @click.pass_context
 def xls_show(ctx, file, sheet):
-    """FILE_NAME SHEET_NAME Show the Excel sheet content"""
+    """Show the Excel sheet content"""
     try:
         excel = IngestRequest(file)
+        # example of how to handle debug parameter
         if ctx.obj['debug']:
             excel.print_sheet_content(sheet)
 
