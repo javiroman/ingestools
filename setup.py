@@ -16,6 +16,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        ingestools=ingestools.main:init
+        ingestools=ingestools.main:main
     ''',
 )

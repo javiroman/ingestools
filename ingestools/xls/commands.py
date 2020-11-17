@@ -25,11 +25,21 @@ def xls_summary(file):
 @xls.command('show')
 @click.argument('file')
 @click.argument('sheet')
-def xls_show(file, sheet):
+@click.pass_context
+def xls_show(ctx, file, sheet):
     """FILE_NAME SHEET_NAME Show the Excel sheet content"""
     try:
         excel = IngestRequest(file)
-        excel.print_sheet_content(sheet)
+        if ctx.obj['debug']:
+            excel.print_sheet_content(sheet)
+
+        # example of how to handle configuration file parameters in commands
+        configfile = ctx.obj['configfile']
+        for key in configfile['general']:
+            click.echo(key)
+
+        click.echo(configfile['general']['option1'])
+
     except InvalidFileException:
         click.echo("ERROR: File not found or not Excel File!")
 
