@@ -4,6 +4,26 @@ Ingest Tools
 
 # Development Environment Setup
 
+```
+$ make virtualenv
+$ source .venv/bin/activate
+(ingestools) $ make install
+(ingestools) $ make editable
+(ingestools) $ ingestools
+Usage: ingestools [OPTIONS] COMMAND [ARGS]...
+
+  Ingest Tools Utilities by KEEDIO
+
+Options:
+  --debug        debug application
+  -v, --version  Show the version and exit.
+  --help         Show this message and exit.
+
+Commands:
+  db
+  xls
+```
+
 
 # Technology Used
 
@@ -15,4 +35,3 @@ Ingest Tools
 | JayDeBeApi JDBC Python DB-API  | <a href="https://pypi.org/project/JayDeBeApi" target="_blank">JayDeBeApi Docs</a> |
 
 
-https://github.com/nchammas/flintrock
