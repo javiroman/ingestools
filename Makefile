@@ -6,6 +6,7 @@ clean:
 	find ingestools -name __pycache__ | xargs rm -fr
 	rm -fr build dist
 	rm -fr __pycache__
+	rm -fr .venv
 
 
 virtualenv:
